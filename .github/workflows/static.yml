@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>بطاقة رمضان</title>
+
+<style>
+body {
+  margin: 0;
+  text-align: center;
+  font-family: Arial;
+  direction: rtl;
+  background-color: #0f2027;
+  color: white;
+}
+
+.container {
+  padding: 30px;
+}
+
+.card {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.card img {
+  width: 400px;
+  display: block;
+}
+
+.greeting {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>اكتب اسمك 🌙</h2>
+  <input type="text" id="username" placeholder="اكتب اسمك هنا">
+  <button onclick="generateCard()">عرض البطاقة</button>
+
+  <div class="card">
+    <img src="logo.png">
+    <div class="greeting" id="greetingText"></div>
+  </div>
+</div>
+
+<script>
+function generateCard() {
+  var name = document.getElementById("username").value;
+  if(name !== "") {
+    document.getElementById("greetingText").innerHTML = " " + name;
+  }
+}
+</script>
+
+</body>
+</html>
